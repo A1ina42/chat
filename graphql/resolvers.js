@@ -15,7 +15,7 @@ module.exports = {
 					const token = context.req.headers.authorization.split("token ")[1];
 					jwt.verify(token, JWT_SECRET, (err, decodedToken) => {
 						if (err) {
-							throw new AuthenticationError("Unauthenticated ");
+							throw new AuthenticationError("Unauthenticated");
 						}
 						user = decodedToken;
 					});
@@ -115,7 +115,6 @@ module.exports = {
 			} catch (err) {
 				console.log(err);
 				if (err.name === "SequelizeUniqueConstraintError") {
-					console.log(err.errors);
 					err.errors.forEach(
 						(e) => (errors[e.path] = `${e.path} is already taken`)
 					);

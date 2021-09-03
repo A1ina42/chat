@@ -9,6 +9,7 @@
     "sequelize-cli": "^6.2.0"
   },
   "scripts": {
+    "dev": "nodemon server.js --ignore client/",
     "start": "nodemon server.js"
   },
   "name": "chat",
